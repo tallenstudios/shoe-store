@@ -15,10 +15,8 @@ const Select = ({ label, value, children, ...delegated }) => {
   return (
     <Wrapper>
       <VisibleLabel>{label}</VisibleLabel>
-
       <SelectWrapper>
         <NativeSelect {...delegated}>{children}</NativeSelect>
-
         <DisplayedBit>
           {displayedValue}
           <ChevronIcon
@@ -32,7 +30,11 @@ const Select = ({ label, value, children, ...delegated }) => {
   );
 };
 
-const Wrapper = styled.label``;
+const Wrapper = styled.label`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`;
 
 const VisibleLabel = styled.span`
   color: ${COLORS.gray[700]};
